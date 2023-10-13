@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using TransportManagmentSystemAPI.DBconfig;
 using TransportManagmentSystemAPI.Interfaces;
 using TransportManagmentSystemAPI.Models;
-//Core Service -02 - Train Service managment 
+
+// Train Service managment 
 namespace TransportManagmentSystemAPI.Services
 {
     public class TrainManagementService : ITrainManagementService

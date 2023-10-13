@@ -2,6 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
+// Represents a reservation in the transport management system.
 namespace TransportManagmentSystemAPI.Models
 {
     public class ReservationManagement

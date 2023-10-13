@@ -5,13 +5,15 @@ using System.Linq;
 using TransportManagmentSystemAPI.DBconfig;
 using TransportManagmentSystemAPI.Interfaces;
 using TransportManagmentSystemAPI.Models;
-//Core Service -04 -Reservation managment 
+
+// This class provides reservation management services.
 namespace TransportManagmentSystemAPI.Services
 {
     public class ReservationManagementService : IReservationManagement
     {
         private readonly IMongoCollection<ReservationManagement> _reservationList;
         private readonly IMongoCollection<TrainManagement> _trainList;
+        
         public ReservationManagementService(IDatabaseSettings _databaseSettings, IScheam _scheam)
         {
             var client = new MongoClient(_databaseSettings.ConnectionString);
@@ -21,6 +23,7 @@ namespace TransportManagmentSystemAPI.Services
 
         }
 
+        // Method to display all reservations for a traveler.
         public List<ReservationManagement> DisplayAllReservation(string travallerId)
         {
             var listofBookings = travallerId != null ? _reservationList.Find(res => res.ReferenceId == travallerId).ToList() : _reservationList.Find(res => true).ToList();
@@ -41,7 +44,7 @@ namespace TransportManagmentSystemAPI.Services
             }
         }
 
-
+        // Method to create a new reservation.
         public Dictionary<int, string> CreateReservation(ReservationManagement reservation)
         {
             Dictionary<int, string> returnCode = new Dictionary<int, string>();
@@ -110,6 +113,7 @@ namespace TransportManagmentSystemAPI.Services
             }
         }
 
+        // Method to cancel a reservation.
         public Dictionary<int, string> CancelledReservation(string id, ReservationManagement reservation)
         {
             Dictionary<int, string> cancellingStat = new Dictionary<int, string>();
@@ -140,6 +144,7 @@ namespace TransportManagmentSystemAPI.Services
 
         }
 
+        // Method to delete a reservation.
         public Dictionary<int, string> DeleteReservation(string id)
         {
             Dictionary<int, string> deletionStatus = new Dictionary<int, string>();
