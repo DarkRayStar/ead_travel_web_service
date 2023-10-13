@@ -2,8 +2,7 @@
 using TransportManagmentSystemAPI.Models;
 using TransportManagmentSystemAPI.Services;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
+// This controller manages train schedules.
 namespace TransportManagmentSystemAPI.Controllers
 {
     [Route("api/[controller]")]

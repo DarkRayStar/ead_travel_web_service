@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
+// Represents user accounts in the transport management system.
 namespace TransportManagmentSystemAPI.Models
 {
     public class UserManagement

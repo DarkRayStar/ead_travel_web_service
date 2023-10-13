@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using TransportManagmentSystemAPI.DBconfig;
 using TransportManagmentSystemAPI.Models;
 
-//Travaller Account managment 
+// Travaller Account managment 
 namespace TransportManagmentSystemAPI.Services
 {
     public class TravallerManagementService : ITravallerManagementService

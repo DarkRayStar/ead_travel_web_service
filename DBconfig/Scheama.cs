@@ -1,5 +1,6 @@
 ﻿namespace TransportManagmentSystemAPI.DBconfig
 {
+    // Provides schema names for different entities in the database.
     public class Scheama : IScheam
     {
         public string UsersScheama { get; set; }

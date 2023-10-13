@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 
+// Represents traveler profiles in the transport management system.
 namespace TransportManagmentSystemAPI.Models
 {
     public class TravallerManagement

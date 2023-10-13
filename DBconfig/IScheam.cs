@@ -1,5 +1,6 @@
 ﻿namespace TransportManagmentSystemAPI.DBconfig
 {
+    // Defines the contract for schema names used in the database.
     public interface IScheam
     {
         public string UsersScheama { get; set; }

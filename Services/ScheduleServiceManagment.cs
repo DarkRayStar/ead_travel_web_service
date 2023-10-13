@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TransportManagmentSystemAPI.DBconfig;
 using TransportManagmentSystemAPI.Interfaces;
 using TransportManagmentSystemAPI.Models;
-//Core Service -03 - Schedule Managment Service
+// This class provides schedule management services.
 namespace TransportManagmentSystemAPI.Services
 {
     public class ScheduleServiceManagment : IScheduleService
@@ -21,11 +21,13 @@ namespace TransportManagmentSystemAPI.Services
             _trainList = database.GetCollection<TrainManagement>(_scheam.TrainScheam);
         }
 
+        // Method to add a new schedule for an existing train.
         public Schedule AddNewScheduleForExisitingTrain(string trainId, Schedule schedule)
         {
             throw new NotImplementedException();
         }
 
+        // Method to update a schedule.
         public Schedule UpdateSchedule(string id, Schedule schedule)
         {
             throw new NotImplementedException();

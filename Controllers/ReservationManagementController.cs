@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using TransportManagmentSystemAPI.Models;
 using TransportManagmentSystemAPI.Services;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
+// This controller manages reservations.
 namespace TransportManagmentSystemAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -20,7 +19,7 @@ namespace TransportManagmentSystemAPI.Controllers
 
         }
 
-
+        // Get a list of reservations by traveler ID.
         [HttpGet("{id}")]
         public ActionResult Get(string id)
         {
@@ -36,6 +35,7 @@ namespace TransportManagmentSystemAPI.Controllers
         }
 
 
+        // Create a new reservation.
         [HttpPost]
         public ActionResult Post(ReservationManagement reservation)
         {
@@ -55,6 +55,7 @@ namespace TransportManagmentSystemAPI.Controllers
             }
         }
 
+        // Get a list of all reservations.
         [HttpGet]
         public ActionResult Get()
         {
@@ -69,7 +70,7 @@ namespace TransportManagmentSystemAPI.Controllers
             }
         }
 
-
+        // Cancel a reservation.
         [HttpPut("{id}")]
         public ActionResult Put(string id, ReservationManagement reservation)
         {
@@ -84,7 +85,7 @@ namespace TransportManagmentSystemAPI.Controllers
             }
         }
 
-
+        // Delete a reservation.
         [HttpDelete("{id}")]
         public ActionResult Delete(string id)
         {

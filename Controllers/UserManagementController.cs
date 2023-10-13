@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using TransportManagmentSystemAPI.Models;
 using TransportManagmentSystemAPI.Services;
 
+// This controller manages user login and accounts.
 namespace TransportManagmentSystemAPI.Controllers
 {
     [ApiController]
@@ -15,6 +16,7 @@ namespace TransportManagmentSystemAPI.Controllers
             _loginservice = loginService;
         }
 
+        // POST - User login management.
         [HttpPost]
         public ActionResult Post(UserManagement user)
         {
@@ -36,7 +38,7 @@ namespace TransportManagmentSystemAPI.Controllers
             
         }
 
-
+        // GET - Retrieve user details
         [HttpGet]
         public Task<UserManagement> Get()
         {

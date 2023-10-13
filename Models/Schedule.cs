@@ -2,6 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
+// Represents a schedule for train departures in the transport management system.
 namespace TransportManagmentSystemAPI.Models
 {
     public class Schedule
