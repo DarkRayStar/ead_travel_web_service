@@ -96,7 +96,7 @@ namespace TransportManagmentSystemAPI.Services
                         }
                     }
 
-                    if (validCount > 4)
+                    if (validCount >= 4)
                     {
                         returnCode.Add(200, "Maximum of 4 reservations allowed per reference ID.");
                         return returnCode;
