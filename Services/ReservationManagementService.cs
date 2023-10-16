@@ -198,7 +198,7 @@ namespace TransportManagmentSystemAPI.Services
                         var deletionResult = _reservationList.DeleteOne(reser => reser.Id == id);
                         deletionStatus.Add(200, "Reservation deleted successfully");
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                         deletionStatus.Add(500, "Failed to delete");
                     }

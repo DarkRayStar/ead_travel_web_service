@@ -14,7 +14,6 @@ namespace TransportManagmentSystemAPI.Services
     {
         private readonly IMongoCollection<TravallerManagement> _travalerProfileList;
         private readonly IMongoCollection<UserManagement> _userList;
-        private readonly IMongoDatabase _database;
 
         public TravallerManagementService(IDatabaseSettings _databaseSettings, IScheam _scheam)
         {
