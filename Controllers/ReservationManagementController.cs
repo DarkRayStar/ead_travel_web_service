@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TransportManagmentSystemAPI.Models;
 using TransportManagmentSystemAPI.Services;
+using System;
 
 // This controller manages reservations.
 namespace TransportManagmentSystemAPI.Controllers
@@ -15,15 +16,15 @@ namespace TransportManagmentSystemAPI.Controllers
         public ReservationManagementController(ReservationManagementService reservationService)
         {
             _reservationService = reservationService;
-
-
         }
 
         // Get a list of reservations by traveler ID.
         [HttpGet("{id}")]
         public ActionResult Get(string id)
         {
-            List<ReservationManagement> reservationList = _reservationService.DisplayAllReservation(id);
+            List<ReservationManagement> reservationList = _reservationService.DisplayAllReservation(
+                id
+            );
             if (reservationList != null)
             {
                 return Ok(reservationList);
@@ -33,7 +34,6 @@ namespace TransportManagmentSystemAPI.Controllers
                 return NotFound();
             }
         }
-
 
         // Create a new reservation.
         [HttpPost]
@@ -51,7 +51,7 @@ namespace TransportManagmentSystemAPI.Controllers
             }
             else
             {
-                return BadRequest();
+                return BadRequest(resv[400]);
             }
         }
 
@@ -59,7 +59,9 @@ namespace TransportManagmentSystemAPI.Controllers
         [HttpGet]
         public ActionResult Get()
         {
-            List<ReservationManagement> reservationList = _reservationService.DisplayAllReservation(null);
+            List<ReservationManagement> reservationList = _reservationService.DisplayAllReservation(
+                null
+            );
             if (reservationList != null)
             {
                 return Ok(reservationList);
@@ -97,7 +99,11 @@ namespace TransportManagmentSystemAPI.Controllers
             }
             else if (deletionResult.ContainsKey(404))
             {
-                return NotFound("Reservation not found");
+                return NotFound(deletionResult[404]);
+            }
+            else if (deletionResult.ContainsKey(400))
+            {
+                return NotFound(deletionResult[400]);
             }
             else
             {
