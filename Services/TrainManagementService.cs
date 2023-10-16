@@ -84,7 +84,7 @@ namespace TransportManagmentSystemAPI.Services
         // retriwe all sheduled trains (Available trains)
         public List<TrainManagement> getAllAvailableTrainSchedules()
         {
-           return _trainList.Find(tra => tra.IsActive).ToList();
+           return _trainList.Find(tra => !tra.IsCancelled).ToList();
         }
 
         // cancel the shedule
